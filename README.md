@@ -1,4 +1,11 @@
-# spring-jwt 
+# spring-security-jwt
+
+Source: https://prateek-ashtikar512.medium.com/spring-security-jwt-d2c8d83a5f17
+
+## Run application
+```
+./gradlew bootRun
+```
 
 ## CURL to get JWT —
 curl — location — request POST ‘http://localhost:9192/authenticate' \
@@ -17,11 +24,3 @@ curl — location — request GET ‘http://localhost:9192/' \
 — header ‘Content-Type: application/json’ \
 — header ‘Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huIiwiQVBQX05BTUUiOiJTcHJpbmcgU2VjdXJpdHkgQXBwIiwiZXhwIjoxNjM4MzE1NDM3LCJpYXQiOjE2MzgyNzk0Mzd9.Mk4ykXtG3O0DMqCe_O_O9twm-XbRANDcQokjb8wvFFE’ \
 — header ‘Cookie: JSESSIONID=F468057F9BFB5B4BFCD15CA58B416E04’
-
-
-
-
-
-
-
-
