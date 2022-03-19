@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<!--supress ThymeleafVariableResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org" lang="en-US">
+<head>
+    <title>GW</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        * { font-family: sans-serif; }
+        a, a:visited { text-decoration: none; color: #0000ee; }
+        td { padding-right: 10px; }
+        td:nth-child(1) *, .label { font-weight: bold; padding-right: 5px; }
+        table { margin-bottom: 10px; margin-left: 8px; }
+    </style>
+</head>
+<body>
+    <span class="label">Application</span> [[${gatewayInfo.application}]]
+    <table>
+        <tr><td><a href="headers">headers</a></td></tr>
+        <tr><td><a href="info">info</a></td></tr>
+    </table>
+    <span class="label">Upstream Servers</span>
+    <table>
+        <tr data-th-each="serverInfo: ${gatewayInfo.serverInfos}">
+            <td><a th:href="${serverInfo.info}">[[${serverInfo.name}]]</a></td>
+            <td><a th:href="${serverInfo.actuator}">Actuator</a></td>
+            <td><a th:href="${serverInfo.api}">API</a></td>
+        </tr>
+    </table>
+</body>
+</html>
