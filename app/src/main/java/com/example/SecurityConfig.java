@@ -1,6 +1,5 @@
 package com.example;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    @Autowired
    private CustomUserDetailsService customUserDetailsService;
    @Autowired
-    private JwtFilter jwtFilter;
+   private JwtFilter jwtFilter;
 
    @Override
    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -35,11 +34,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    
    @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers("/authenticate")
-                .permitAll().anyRequest().authenticated()
-                .and().exceptionHandling().and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        
-        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);;
+        http.csrf().disable().authorizeRequests()
+            .antMatchers("/authenticate", "/actuatopr/", "/api1/actuatopr/").permitAll()
+                ;
+//            .anyRequest().authenticated()
+//            .and().exceptionHandling().and().sessionManagement()
+//            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);;
     }
 }

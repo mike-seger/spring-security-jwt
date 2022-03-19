@@ -9,7 +9,7 @@ Source: https://prateek-ashtikar512.medium.com/spring-security-jwt-d2c8d83a5f17
 
 ## Get the JWT
 ```
-jwt=$(curl -X POST 'http://localhost:9191/authenticate' -H 'Content-Type: application/json' -H 'Cookie: JSESSIONID=F468057F9BFB5B4BFCD15CA58B416E04' -d '{ "userName": "john", "password" : "john" }')
+jwt=$(curl -X POST "http://localhost:9191/authenticate" -H "Content-Type: application/json" -H "Cookie: JSESSIONID=F468057F9BFB5B4BFCD15CA58B416E04" -d "{ "userName": "john", "password" : "john" }")
 echo $jwt
 ```
 
@@ -18,7 +18,7 @@ eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huIiwiQVBQX05BTUUiOiJTcHJpbmcgU2VjdXJpdHkgQXB
 
 ## Make the API call
 ```
-curl 'http://localhost:9191/' -H 'Content-Type: application/json' -H "Authorization: Bearer $jwt" -H 'Cookie: SESSIONID=F468057F9BFB5B4BFCD15CA58B416E04'
+curl "http://localhost:9191/" -H "Content-Type: application/json" -H "Authorization: Bearer $jwt" -H "Cookie: SESSIONID=F468057F9BFB5B4BFCD15CA58B416E04"
 ```
 
 ## Run the gateway

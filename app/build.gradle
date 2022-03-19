@@ -18,17 +18,18 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor "org.projectlombok:lombok:1.18.22"
     implementation "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
     implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
     implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
     implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
     implementation "io.jsonwebtoken:jjwt:0.9.1"
     implementation "org.projectlombok:lombok:1.18.22"
-    runtimeOnly "com.h2database:h2:1.4.200"
+    runtimeOnly "com.h2database:h2:2.1.210"
     testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-    testImplementation "org.springframework.security:spring-security-test:5.6.0"
+    testImplementation "org.springframework.security:spring-security-test:5.6.2"
 }
 
 group = "com.example"
