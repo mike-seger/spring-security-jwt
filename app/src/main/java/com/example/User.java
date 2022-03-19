@@ -14,10 +14,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "USER_TBL")
 public class User {
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
-   private int id;
-    private String userName;
-    private String password;
-    private String email;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String userName;
+	private String password;
+	private String email;
 }
